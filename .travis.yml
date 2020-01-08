@@ -1,6 +1,0 @@
-language: csharp
-mono: none
-dotnet: 2.2
-solution: DmxUsbProCSharp.sln
-script:
- - dotnet restore
