@@ -15,6 +15,5 @@ jobs:
         dotnet-version: 2.2.108
     - name: Test and build with dotnet
       run: |
-      dotnet test
-      dotnet build --configuration Release
-      
+        dotnet test
+        dotnet build --configuration Release
