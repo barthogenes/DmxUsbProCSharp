@@ -26,4 +26,4 @@ jobs:
     - name: Test
       run: dotnet test ./Source/ --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
     - name: Generate HTML report
-      run: dotnet reportgenerator "-reports:./Source/DmxUsbProCSharp/coverage.cobertura.xml" -reporttypes:Html  "-targetdir:./report"
+      run: dotnet reportgenerator "-reports:./Source/DmxUsbProCSharp.UnitTests/coverage.cobertura.xml" -reporttypes:Html  "-targetdir:./report"
