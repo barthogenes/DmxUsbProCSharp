@@ -1,9 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>DmxUsbProCSharp</AssemblyName>
     <RootNamespace>DmxUsbProCSharp</RootNamespace>
+    <Version>0.0.1</Version>
+    <Authors>Bart Hogenes</Authors>
+    <Description>A C# library for sending and receiving DMX data using the Enttec DMX USB Pro device.</Description>
+    <Copyright>Bart Hogenes</Copyright>
+    <RepositoryUrl>https://github.com/barthogenes/DmxUsbProCSharp</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
