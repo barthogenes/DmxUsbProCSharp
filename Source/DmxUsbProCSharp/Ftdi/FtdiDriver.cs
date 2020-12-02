@@ -1,4 +1,3 @@
-using DmxUsbProCSharp;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -8,7 +7,7 @@ namespace DmxUsbProCSharp.Ftdi
 {
 	public class FtdiDriver : IFtdiDriver
 	{
-		private FTDI ftdi;
+		private readonly FTDI ftdi;
 
 		public FtdiDriver()
 		{
@@ -83,23 +82,6 @@ namespace DmxUsbProCSharp.Ftdi
 			Thread.Sleep(3500);
 			return status == FTDI.FT_STATUS.FT_OK;
 		}
-
-
-		//public bool SendCommand(DmxCommand command)
-		//{
-		//	var isSend = Send(command.GetData());
-		//	Thread.Sleep(60);
-		//	isSend = Send(new byte[513]);
-
-		//	return isSend;
-		//}
-
-		//public bool Send(byte[] dataBytes)
-		//{
-		//	uint bytesWritten = 0;
-		//	var result = Send(ENTTEC_LABEL.SEND, dataBytes, ref bytesWritten);
-		//	return result == FTDI.FT_STATUS.FT_OK && bytesWritten == dataBytes.Length;
-		//}
 
 		public virtual bool PurgeWriteBuffer()
 		{
