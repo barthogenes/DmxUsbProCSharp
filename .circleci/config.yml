@@ -10,6 +10,9 @@ jobs:
       name: win/default
     working_directory: ./Source
     steps:
+      - run:
+          name: "Print Working Directory"
+          command: pwd
       - checkout
       - restore_cache:
           keys:
@@ -35,6 +38,9 @@ jobs:
       name: win/default
     working_directory: ./Source
     steps:
+      - run:
+          name: "Print Working Directory"
+          command: pwd
       - checkout
       - run:
           name: "Build Application according to some given configuration"
