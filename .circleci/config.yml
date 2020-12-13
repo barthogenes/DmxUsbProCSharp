@@ -14,27 +14,17 @@ jobs:
           keys:
             - dotnet-packages-v1-{{ checksum "Source/DmxUsbProCSharp/DmxUsbProCSharp.csproj" }}
       - run:
-          name: "Print Working Directory"
-          command: pwd
-      - run:
-          name: "List files"
-          working_dir: ./Source
-          command: dir
-      - run:
           name: "Install project dependencies"
-          command: dotnet.exe restore
+          command: cd .\Source\ ; dotnet.exe restore
       - save_cache:
           paths:
             - C:\Users\circleci\.nuget\packages
           key: dotnet-packages-v1-{{ checksum "Source/DmxUsbProCSharp/DmxUsbProCSharp.csproj" }}
       - run:
           name: "Run Application Tests"
-          command: dotnet.exe test -v n --results-directory:test_coverage --collect:"Code Coverage"
-      - run:
-          name: "Print Working Directory"
-          command: pwd
+          command: cd .\Source\ ; dotnet.exe test -v n --results-directory:test_coverage --collect:"Code Coverage"
       - store_artifacts:
-          path: C:\Users\circleci\project\test_coverage
+          path: C:\Users\circleci\project\Source\test_coverage
   build:
     description: Build application with Release configuration
     executor:
@@ -42,14 +32,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Print Working Directory"
-          command: pwd
-      - run:
-          name: "List files"
-          command: dir
-      - run:
           name: "Build Application according to some given configuration"
-          command: dotnet.exe build --configuration Release
+          command: cd .\Source\ ; dotnet.exe build --configuration Release
 
 workflows:
   test_and_build:
