@@ -10,13 +10,16 @@ jobs:
       name: win/default
     working_directory: ~/project/Source
     steps:
-      - run:
-          name: "Print Working Directory"
-          command: pwd
       - checkout
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "Source/DmxUsbProCSharp/DmxUsbProCSharp.csproj" }}
+      - run:
+          name: "Print Working Directory"
+          command: pwd
+      - run:
+          name: "List files"
+          command: dir
       - run:
           name: "Install project dependencies"
           command: dotnet.exe restore
@@ -38,10 +41,13 @@ jobs:
       name: win/default
     working_directory: ~/project/Source
     steps:
+      - checkout
       - run:
           name: "Print Working Directory"
           command: pwd
-      - checkout
+      - run:
+          name: "List files"
+          command: dir
       - run:
           name: "Build Application according to some given configuration"
           command: dotnet.exe build --configuration Release
