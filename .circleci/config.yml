@@ -18,6 +18,7 @@ jobs:
           command: pwd
       - run:
           name: "List files"
+          working_dir: ./Source
           command: dir
       - run:
           name: "Install project dependencies"
