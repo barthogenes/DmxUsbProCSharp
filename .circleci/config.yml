@@ -7,7 +7,7 @@ jobs:
   test:
     description: Setup and run application tests
     executor:
-      name: windows/default
+      name: win/default
       working_directory: ./Source
     steps:
       - checkout
@@ -32,7 +32,7 @@ jobs:
   build:
     description: Build application with Release configuration
     executor:
-      name: windows/default
+      name: win/default
     steps:
       - checkout
       - run:
