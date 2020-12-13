@@ -8,7 +8,6 @@ jobs:
     description: Setup and run application tests
     executor:
       name: win/default
-    working_directory: ~/project/Source
     steps:
       - checkout
       - restore_cache:
@@ -39,7 +38,6 @@ jobs:
     description: Build application with Release configuration
     executor:
       name: win/default
-    working_directory: ~/project/Source
     steps:
       - checkout
       - run:
