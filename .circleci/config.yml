@@ -8,7 +8,7 @@ jobs:
     description: Setup and run application tests
     executor:
       name: win/default
-    working_directory: ~/Source
+    working_directory: ~/project/Source
     steps:
       - run:
           name: "Print Working Directory"
@@ -36,7 +36,7 @@ jobs:
     description: Build application with Release configuration
     executor:
       name: win/default
-    working_directory: ~/Source
+    working_directory: ~/project/Source
     steps:
       - run:
           name: "Print Working Directory"
